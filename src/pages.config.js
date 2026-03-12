@@ -52,6 +52,7 @@ import Services from './pages/Services';
 import Portfolio from './pages/Portfolio';
 import Reviews from './pages/Reviews';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import SitemapPage from './pages/SitemapPage';
 import __Layout from './Layout.jsx';
 
 
@@ -61,6 +62,7 @@ export const PAGES = {
     "Portfolio": Portfolio,
     "Reviews": Reviews,
     "PrivacyPolicy": PrivacyPolicy,
+    "SitemapPage": SitemapPage,
 }
 
 export const pagesConfig = {
