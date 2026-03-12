@@ -53,6 +53,7 @@ import Portfolio from './pages/Portfolio';
 import Reviews from './pages/Reviews';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import SitemapPage from './pages/SitemapPage';
+import SEOCrawler from './pages/SEOCrawler';
 import __Layout from './Layout.jsx';
 
 
@@ -63,6 +64,7 @@ export const PAGES = {
     "Reviews": Reviews,
     "PrivacyPolicy": PrivacyPolicy,
     "SitemapPage": SitemapPage,
+    "SEOCrawler": SEOCrawler,
 }
 
 export const pagesConfig = {
