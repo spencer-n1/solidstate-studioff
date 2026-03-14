@@ -7,8 +7,8 @@ import { createPageUrl } from '@/utils';
 
 const trustItems = [
   { icon: Sparkles, text: "Expert Designer" },
+  { icon: Users, text: "10+ Happy Clients" },
   { icon: TrendingUp, text: "3x Higher Conversions" },
-  { icon: Sparkles, text: "Results Focused" },
 ];
 
 export default function HeroSection({ onOpenContact }) {

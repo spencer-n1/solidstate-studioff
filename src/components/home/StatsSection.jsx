@@ -1,11 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import CountUp from '../shared/CountUp';
 
 const stats = [
-  { label: "100%", sublabel: "Custom Design" },
-  { label: "Mobile-First", sublabel: "Approach" },
-  { label: "SEO-Ready", sublabel: "From Day One" },
-  { label: "Launch", sublabel: "Support" },
+  { value: 100, suffix: "%", label: "Satisfaction" },
+  { value: 10, suffix: "+", label: "Projects Completed" },
+  { value: 3, suffix: "x", label: "Average Conversion Increase" },
+  { value: 24, suffix: "hr", label: "Response Time" },
 ];
 
 export default function StatsSection() {
@@ -26,8 +27,10 @@ export default function StatsSection() {
                 i === 0 ? 'border-r border-white/10 md:border-r-white/10' : ''
               } ${i === 2 ? 'border-r border-white/10 md:border-r-white/10' : ''}`}
             >
-              <div className="text-2xl md:text-3xl font-bold mb-2">{stat.label}</div>
-              <p className="text-sm text-gray-400">{stat.sublabel}</p>
+              <div className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
+                <CountUp end={stat.value} suffix={stat.suffix} />
+              </div>
+              <p className="text-sm text-gray-400">{stat.label}</p>
             </motion.div>
           ))}
         </div>
