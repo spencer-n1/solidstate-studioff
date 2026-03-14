@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Users, TrendingUp } from 'lucide-react';
+import { Sparkles, Target, TrendingUp } from 'lucide-react';
 import OutlineButton from '../shared/OutlineButton';
 import { useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 
 const trustItems = [
   { icon: Sparkles, text: "Expert Designer" },
-  { icon: TrendingUp, text: "Results Focused" },
+  { icon: Target, text: "Results Focused" },
   { icon: TrendingUp, text: "3x Higher Conversions" },
 ];
 
