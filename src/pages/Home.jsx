@@ -5,7 +5,6 @@ import FeaturedWorkSection from '../components/home/FeaturedWorkSection';
 import StatsSection from '../components/home/StatsSection';
 import WhyChooseUsSection from '../components/home/WhyChooseUsSection';
 import ServicesSection from '../components/home/ServicesSection';
-import ReviewsSection from '../components/home/ReviewsSection';
 import ContactSection from '../components/home/ContactSection';
 import FinalCTASection from '../components/home/FinalCTASection';
 
@@ -14,11 +13,10 @@ export default function Home({ onOpenContact }) {
     <div>
       <HeroSection onOpenContact={onOpenContact} />
       <ProcessSection />
-      <FeaturedWorkSection />
+      <FeaturedWorkSection onOpenContact={onOpenContact} />
       <StatsSection />
       <WhyChooseUsSection />
       <ServicesSection />
-      <ReviewsSection />
       <ContactSection />
       <FinalCTASection onOpenContact={onOpenContact} />
     </div>

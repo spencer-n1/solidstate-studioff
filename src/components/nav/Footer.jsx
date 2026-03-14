@@ -48,11 +48,7 @@ export default function Footer() {
                   Portfolio
                 </button>
               </li>
-              <li>
-                <button onClick={() => handleNav("Reviews")} className="text-sm text-gray-400 hover:text-white transition-colors bg-transparent border-none cursor-pointer">
-                  Reviews
-                </button>
-              </li>
+
             </ul>
           </div>
 

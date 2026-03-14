@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import CountUp from '../shared/CountUp';
 
 const stats = [
-  { value: 100, suffix: "%", label: "Satisfaction" },
-  { value: 10, suffix: "+", label: "Projects Completed" },
-  { value: 3, suffix: "x", label: "Average Conversion Increase" },
   { value: 24, suffix: "hr", label: "Response Time" },
+  { value: 0, suffix: "", label: "SEO-Ready From Day One" },
+  { value: 0, suffix: "", label: "Mobile-First Approach" },
+  { value: 100, suffix: "%", label: "Custom Design" },
 ];
 
 export default function StatsSection() {
@@ -28,7 +28,7 @@ export default function StatsSection() {
               } ${i === 2 ? 'border-r border-white/10 md:border-r-white/10' : ''}`}
             >
               <div className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
-                <CountUp end={stat.value} suffix={stat.suffix} />
+                {stat.value > 0 ? <CountUp end={stat.value} suffix={stat.suffix} /> : <span className="text-2xl md:text-3xl">{stat.suffix}</span>}
               </div>
               <p className="text-sm text-gray-400">{stat.label}</p>
             </motion.div>

@@ -9,9 +9,7 @@ const LOGO_URL = "https://media.base44.com/images/public/user_6985431bc010dacd92
 
 const leftLinks = [
   { label: "HOME", page: "Home", scroll: null },
-  { label: "FEATURED WORK", page: "Home", scroll: "featured-work" },
   { label: "WHY CHOOSE US", page: "Home", scroll: "why-choose-us" },
-  { label: "REVIEWS", page: "Home", scroll: "reviews" },
 ];
 
 const rightLinks = [

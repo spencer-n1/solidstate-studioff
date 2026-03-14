@@ -5,7 +5,7 @@ import OutlineButton from '../shared/OutlineButton';
 
 export default function FinalCTASection({ onOpenContact }) {
   return (
-    <section className="py-24 md:py-32 bg-[#0a0a0a]">
+    <section className="py-24 md:py-32 bg-[#1a1a1a]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
         <AnimatedHeading centered className="mb-6">
           Let's Build Something Great Together
