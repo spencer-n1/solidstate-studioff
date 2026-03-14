@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import CountUp from '../shared/CountUp';
 
 const stats = [
-  { value: 100, suffix: "%", label: "Satisfaction" },
-  { value: 10, suffix: "+", label: "Projects Completed" },
-  { value: 3, suffix: "x", label: "Average Conversion Increase" },
   { value: 24, suffix: "hr", label: "Response Time" },
+  { value: null, suffix: "SEO-Ready", label: "From Day One" },
+  { value: null, suffix: "Mobile-First", label: "Approach" },
+  { value: 100, suffix: "%", label: "Custom Design" },
 ];
 
 export default function StatsSection() {
@@ -27,10 +27,23 @@ export default function StatsSection() {
                 i === 0 ? 'border-r border-white/10 md:border-r-white/10' : ''
               } ${i === 2 ? 'border-r border-white/10 md:border-r-white/10' : ''}`}
             >
-              <div className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
-                <CountUp end={stat.value} suffix={stat.suffix} />
+              <div className="text-center">
+                {stat.value !== null ? (
+                  <>
+                    <div className="text-4xl md:text-5xl font-bold mb-2">
+                      <CountUp end={stat.value} suffix={stat.suffix} />
+                    </div>
+                    <p className="text-sm text-gray-500">{stat.label}</p>
+                  </>
+                ) : (
+                  <>
+                    <div className="text-2xl md:text-3xl font-bold mb-2">
+                      {stat.suffix}
+                    </div>
+                    <p className="text-sm text-gray-500">{stat.label}</p>
+                  </>
+                )}
               </div>
-              <p className="text-sm text-gray-400">{stat.label}</p>
             </motion.div>
           ))}
         </div>
