@@ -7,7 +7,7 @@ import { createPageUrl } from '@/utils';
 
 const trustItems = [
   { icon: Sparkles, text: "Expert Designer" },
-  { icon: TrendingUp, text: "Results Focused" },
+  { icon: Users, text: "10+ Happy Clients" },
   { icon: TrendingUp, text: "3x Higher Conversions" },
 ];
 
