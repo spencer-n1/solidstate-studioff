@@ -48,23 +48,23 @@
  * The mainPage value must match a key in the PAGES object exactly.
  */
 import Home from './pages/Home';
-import Services from './pages/Services';
 import Portfolio from './pages/Portfolio';
-import Reviews from './pages/Reviews';
 import PrivacyPolicy from './pages/PrivacyPolicy';
-import SitemapPage from './pages/SitemapPage';
+import Reviews from './pages/Reviews';
 import SEOCrawler from './pages/SEOCrawler';
+import Services from './pages/Services';
+import SitemapPage from './pages/SitemapPage';
 import __Layout from './Layout.jsx';
 
 
 export const PAGES = {
     "Home": Home,
-    "Services": Services,
     "Portfolio": Portfolio,
-    "Reviews": Reviews,
     "PrivacyPolicy": PrivacyPolicy,
-    "SitemapPage": SitemapPage,
+    "Reviews": Reviews,
     "SEOCrawler": SEOCrawler,
+    "Services": Services,
+    "SitemapPage": SitemapPage,
 }
 
 export const pagesConfig = {

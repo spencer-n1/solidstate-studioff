@@ -14,7 +14,7 @@ export default function Home({ onOpenContact }) {
     <div>
       <HeroSection onOpenContact={onOpenContact} />
       <ProcessSection />
-      <FeaturedWorkSection />
+      <FeaturedWorkSection onOpenContact={onOpenContact} />
       <StatsSection />
       <WhyChooseUsSection />
       <ServicesSection />
