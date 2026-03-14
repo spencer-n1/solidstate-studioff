@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Target, TrendingUp } from 'lucide-react';
+import { Sparkles, Users, TrendingUp } from 'lucide-react';
 import OutlineButton from '../shared/OutlineButton';
 import { useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 
 const trustItems = [
   { icon: Sparkles, text: "Expert Designer" },
-  { icon: Target, text: "Results Focused" },
+  { icon: Users, text: "10+ Happy Clients" },
   { icon: TrendingUp, text: "3x Higher Conversions" },
 ];
 
@@ -27,7 +27,7 @@ export default function HeroSection({ onOpenContact }) {
       </div>
 
       {/* Bottom gradient fade to Our Process */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#0a0a0a] z-10" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#1a1a1a] z-10" />
 
       <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 text-center pt-32 pb-24">
         {/* Badge */}
