@@ -19,7 +19,7 @@ export default function HeroSection({ onOpenContact }) {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=1920&q=80"
+          src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b27d71e3242dc78a08dd23/e9ef41efc_hero1.png"
           alt="Modern dark workspace with curved monitor"
           className="w-full h-full object-cover opacity-30"
         />
