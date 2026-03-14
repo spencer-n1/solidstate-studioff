@@ -27,7 +27,7 @@ export default function HeroSection({ onOpenContact }) {
       </div>
 
       {/* Bottom gradient fade to Our Process */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#1a1a1a] z-10" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#0a0a0a] z-10" />
 
       <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 text-center pt-32 pb-24">
         {/* Badge */}
