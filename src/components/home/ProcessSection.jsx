@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Search, Palette, Rocket } from 'lucide-react';
 import SectionBubble from '../shared/SectionBubble';
 import AnimatedHeading from '../shared/AnimatedHeading';
+import DotGrid from '../shared/DotGrid';
 
 const steps = [
   { num: "01", icon: Search, title: "Discovery & Planning", desc: "We dive deep into your business, audience, and goals to create a tailored strategy." },
@@ -12,8 +13,9 @@ const steps = [
 
 export default function ProcessSection() {
   return (
-    <section id="our-process" className="py-24 md:py-32 bg-[#1a1a1a]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="our-process" className="py-24 md:py-32 bg-[#1a1a1a] relative overflow-hidden">
+      <DotGrid />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionBubble text="Our Process" centered />
         <AnimatedHeading centered className="mt-6 mb-4">
           From Concept To Launch
@@ -39,7 +41,7 @@ export default function ProcessSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
                 whileHover={{ y: -6, transition: { duration: 0.45, ease: "easeOut" } }}
-                className="bg-[#0a0a0a]/60 border border-white/5 rounded-2xl p-8 group hover:border-white/15 transition-all duration-500 hover:shadow-[0_8px_40px_rgba(0,0,0,0.3)]"
+                className="bg-[#0a0a0a]/70 border border-white/5 rounded-2xl p-8 group hover:border-white/20 transition-all duration-500 hover:shadow-[0_12px_48px_rgba(0,0,0,0.5)]"
               >
                 <span className="text-xs font-bold tracking-wider text-gray-500 mb-4 block">{step.num}</span>
                 <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-5 group-hover:bg-white/10 transition-colors duration-400">
