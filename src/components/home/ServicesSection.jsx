@@ -57,10 +57,10 @@ export default function ServicesSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
                 whileHover={{ y: -6, transition: { duration: 0.45, ease: "easeOut" } }}
-                className="bg-[#0a0a0a]/60 border border-white/5 rounded-2xl p-8 flex flex-col hover:border-white/15 transition-all duration-500 hover:shadow-[0_8px_40px_rgba(0,0,0,0.3)]"
+                className="bg-[#0a0a0a]/70 border border-white/5 rounded-2xl p-8 flex flex-col hover:border-white/20 transition-all duration-500 hover:shadow-[0_12px_48px_rgba(0,0,0,0.5)]"
               >
-                <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-5">
-                  <Icon className="w-5 h-5 text-gray-400" />
+                <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-5 group-hover:bg-white/10 transition-colors duration-300">
+                  <Icon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors duration-300" />
                 </div>
                 <h3 className="text-lg font-semibold mb-3">{service.title}</h3>
                 <p className="text-sm text-gray-400 leading-relaxed mb-6">{service.desc}</p>

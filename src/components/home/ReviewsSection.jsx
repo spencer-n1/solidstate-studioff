@@ -165,7 +165,7 @@ export default function ReviewsSection() {
 
 function ReviewCard({ review }) {
   return (
-    <div className="bg-[#1a1a1a] border border-white/5 rounded-2xl p-8">
+    <div className="bg-[#1a1a1a] border border-white/5 rounded-2xl p-8 shadow-[0_8px_40px_rgba(0,0,0,0.4)]">
       <div className="flex gap-1 mb-4">
         {Array.from({ length: review.stars }).map((_, i) => (
           <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />

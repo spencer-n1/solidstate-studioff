@@ -58,7 +58,7 @@ export default function Services({ onOpenContact }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
-                className="bg-[#1a1a1a] border border-white/5 rounded-2xl overflow-hidden hover:border-white/10 transition-all duration-500"
+                className="bg-[#1a1a1a] border border-white/5 rounded-2xl overflow-hidden hover:border-white/15 transition-all duration-500 hover:shadow-[0_12px_48px_rgba(0,0,0,0.5)] hover:-translate-y-1"
               >
                 {hasImage ? (
                   <div className={`flex flex-col ${isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse'}`} style={{ minHeight: 340 }}>

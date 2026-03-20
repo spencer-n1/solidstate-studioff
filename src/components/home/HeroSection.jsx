@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Users, TrendingUp } from 'lucide-react';
+import { Sparkles, TrendingUp } from 'lucide-react';
 import OutlineButton from '../shared/OutlineButton';
+import DotGrid from '../shared/DotGrid';
 import { useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 
@@ -16,6 +17,8 @@ export default function HeroSection({ onOpenContact }) {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]">
+      {/* Dot grid texture */}
+      <DotGrid />
       {/* Background image */}
       <div className="absolute inset-0">
         <img

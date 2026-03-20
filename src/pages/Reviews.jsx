@@ -34,7 +34,7 @@ export default function Reviews() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
               whileHover={{ y: -6, transition: { duration: 0.45, ease: "easeOut" } }}
-              className="bg-[#1a1a1a] border border-white/5 rounded-2xl p-8 hover:border-white/15 transition-all duration-500"
+              className="bg-[#1a1a1a] border border-white/5 rounded-2xl p-8 hover:border-white/15 transition-all duration-500 hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)] flex flex-col"
             >
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: review.stars }).map((_, j) => (
@@ -48,7 +48,7 @@ export default function Reviews() {
               </div>
               <a
                 href="#"
-                className="inline-flex items-center gap-1.5 text-xs text-gray-500 hover:text-white transition-colors mt-3"
+                className="inline-flex items-center gap-1.5 text-xs text-gray-500 hover:text-white transition-colors mt-3 mt-auto pt-3"
               >
                 Check Out Their Website <ArrowRight className="w-3 h-3" />
               </a>
