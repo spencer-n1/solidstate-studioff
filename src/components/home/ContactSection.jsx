@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import DotGrid from '../shared/DotGrid';
 import { Check, ArrowRight, ArrowLeft, Globe, RefreshCw, BarChart3, HelpCircle, CheckCircle } from 'lucide-react';
 import SectionBubble from '../shared/SectionBubble';
 import AnimatedHeading from '../shared/AnimatedHeading';
@@ -36,8 +37,9 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-32 bg-[#0a0a0a]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 md:py-32 bg-[#0a0a0a] relative overflow-hidden">
+      <DotGrid />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
           {/* Left column */}
           <div className="lg:col-span-2">

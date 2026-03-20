@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { X, Check, Zap } from 'lucide-react';
 import SectionBubble from '../shared/SectionBubble';
 import AnimatedHeading from '../shared/AnimatedHeading';
+import DotGrid from '../shared/DotGrid';
 
 const comparisons = [
   { label: "Conversions Per Month", standard: "~20", ours: "60+" },
@@ -14,8 +15,9 @@ const comparisons = [
 
 export default function WhyChooseUsSection() {
   return (
-    <section id="why-choose-us" className="py-24 md:py-32 bg-[#0a0a0a]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="why-choose-us" className="py-24 md:py-32 bg-[#0a0a0a] relative overflow-hidden">
+      <DotGrid />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionBubble text="Why Choose Us" centered />
         <AnimatedHeading centered className="mt-6 mb-4">
           Real Numbers, Real Results

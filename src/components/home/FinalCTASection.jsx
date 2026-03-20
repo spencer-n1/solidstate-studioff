@@ -2,11 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import AnimatedHeading from '../shared/AnimatedHeading';
 import OutlineButton from '../shared/OutlineButton';
+import DotGrid from '../shared/DotGrid';
 
 export default function FinalCTASection({ onOpenContact }) {
   return (
-    <section className="py-24 md:py-32 bg-[#1a1a1a]">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+    <section className="py-24 md:py-32 bg-[#1a1a1a] relative overflow-hidden">
+      <DotGrid />
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10">
         <AnimatedHeading centered className="mb-6">
           Let's Build Something Great Together
         </AnimatedHeading>

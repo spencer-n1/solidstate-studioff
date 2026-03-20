@@ -4,11 +4,13 @@ import { Clock } from 'lucide-react';
 import SectionBubble from '../components/shared/SectionBubble';
 import AnimatedHeading from '../components/shared/AnimatedHeading';
 import OutlineButton from '../components/shared/OutlineButton';
+import DotGrid from '../components/shared/DotGrid';
 
 export default function Portfolio({ onOpenContact }) {
   return (
-    <div className="pt-24 bg-[#0a0a0a]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+    <div className="pt-24 bg-[#0a0a0a] relative overflow-hidden">
+      <DotGrid />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10">
         <SectionBubble text="Our Portfolio" centered />
         <AnimatedHeading centered className="mt-6 mb-12">
           Building a New Portfolio
