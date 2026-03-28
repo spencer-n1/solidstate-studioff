@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, TrendingUp } from 'lucide-react';
+import { useQuery } from '@tanstack/react-query';
+import { sanityClient } from '../../lib/sanityClient';
 import OutlineButton from '../shared/OutlineButton';
 import DotGrid from '../shared/DotGrid';
 import { useNavigate } from 'react-router-dom';
@@ -14,6 +16,18 @@ const trustItems = [
 
 export default function HeroSection({ onOpenContact }) {
   const navigate = useNavigate();
+
+  // Fetch the dynamic headline from Sanity CMS
+  const { data: sanityData, isLoading } = useQuery({
+    queryKey: ['homepageContent'],
+    queryFn: async () => {
+      const result = await sanityClient.fetch(`*[_type == "homepage"][0]`);
+      return result || {};
+    }
+  });
+
+  const headline = sanityData?.heroHeadline || "Building Connections,\nOne Click at a Time";
+  const subheadline = sanityData?.heroSubheadline || "We design high-converting websites & automation systems built to turn visitors into paying customers.";
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]">
@@ -29,16 +43,11 @@ export default function HeroSection({ onOpenContact }) {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/60 via-[#0a0a0a]/40 to-[#0a0a0a]" />
       </div>
 
-      {/* Bottom gradient fade to Our Process */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#1a1a1a] z-10" />
 
       <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 text-center pt-32 pb-24">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
+        
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
           <span className="inline-block px-4 py-1.5 text-[10px] font-semibold tracking-[0.2em] uppercase text-gray-300 border border-white/15 rounded-full bg-white/5 mb-8">
             Orange County's Premier Web Design Agency
           </span>
@@ -49,11 +58,9 @@ export default function HeroSection({ onOpenContact }) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6 whitespace-pre-line"
         >
-          Building Connections,
-          <br />
-          One Click at a Time
+          {headline}
         </motion.h1>
 
         {/* Description */}
@@ -63,71 +70,17 @@ export default function HeroSection({ onOpenContact }) {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          We design high-converting websites & automation systems built to turn visitors into paying customers.
+          {subheadline}
         </motion.p>
 
         {/* Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14"
-        >
-          <OutlineButton onClick={onOpenContact} size="lg">
-            Start Your Project
-          </OutlineButton>
-          <OutlineButton
-            onClick={() => {
-              navigate(createPageUrl("Portfolio"));
-              setTimeout(() => window.scrollTo({ top: 0, behavior: 'instant' }), 50);
-            }}
-            size="lg"
-            className="border-white/15 hover:border-white/30"
-          >
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.8 }} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+          <OutlineButton onClick={onOpenContact} size="lg">Start Your Project</OutlineButton>
+          <OutlineButton onClick={() => { navigate(createPageUrl("Portfolio")); setTimeout(() => window.scrollTo({ top: 0, behavior: 'instant' }), 50); }} size="lg" className="border-white/15 hover:border-white/30">
             View Our Work
           </OutlineButton>
         </motion.div>
-
-        {/* Trust bubbles */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1 }}
-          className="flex flex-wrap items-center justify-center gap-4"
-        >
-          {trustItems.map((item) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={item.text}
-                className="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full"
-              >
-                <Icon className="w-4 h-4 text-gray-400" />
-                <span className="text-xs font-medium text-gray-300">{item.text}</span>
-              </div>
-            );
-          })}
-        </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.6 }}
-        className="absolute bottom-36 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center"
-      >
-        <motion.div
-          animate={{ height: [0, 40] }}
-          transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }}
-          className="w-px bg-gradient-to-b from-transparent to-white/40"
-        />
-        <motion.div
-          animate={{ opacity: [0.3, 1, 0.3] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          className="w-2 h-2 rounded-full bg-white/50 mt-1"
-        />
-      </motion.div>
     </section>
   );
 }
